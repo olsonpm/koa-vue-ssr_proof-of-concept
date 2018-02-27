@@ -1,0 +1,63 @@
+{
+  "name": "koa-vue-ssr_proof-of-concept",
+  "version": "0.1.0",
+  "description": "A bare-bones koa-vue-ssr implementation",
+  "main": "index.js",
+  "keywords": [],
+  "author": "Philip Olson",
+  "license": "SEE LICENSE IN license.txt",
+  "dependencies": {
+    "autoprefixer": "^7.2.6",
+    "chalk": "^2.3.1",
+    "extract-text-webpack-plugin": "^3.0.2",
+    "file-loader": "^1.1.10",
+    "friendly-errors-webpack-plugin": "^1.6.1",
+    "koa": "^2.5.0",
+    "koa-router": "^7.4.0",
+    "koa-vue-ssr_init-dev-server": "github:olsonpm/koa-vue-ssr_init-dev-server",
+    "koa-webpack": "^2.0.3",
+    "lodash": "^4.17.5",
+    "lru-cache": "^4.1.1",
+    "memory-fs": "^0.4.1",
+    "pify": "^3.0.0",
+    "sane": "^2.4.1",
+    "vue": "^2.5.13",
+    "vue-router": "^3.0.1",
+    "vue-server-renderer": "^2.5.13",
+    "vue-template-compiler": "^2.5.13",
+    "webpack": "^3.11.0",
+    "webpack-merge": "^4.1.2",
+    "webpack-node-externals": "^1.6.0"
+  },
+  "devDependencies": {
+    "babel-core": "^6.26.0",
+    "babel-loader": "^7.1.3",
+    "babel-plugin-syntax-dynamic-import": "^6.18.0",
+    "babel-plugin-transform-object-rest-spread": "^6.26.0",
+    "babel-preset-env": "^1.6.1",
+    "css-loader": "^0.28.10",
+    "eslint": "^4.18.1",
+    "eslint-config-personal": "github:olsonpm/eslint-config-personal",
+    "node-sass": "^4.7.2",
+    "null-loader": "^0.1.1",
+    "prettier": "^1.11.0",
+    "sass-loader": "^6.0.6",
+    "source-map-support": "^0.5.3",
+    "url-loader": "^0.6.2",
+    "vue-loader": "^14.1.1",
+    "vue-style-loader": "^3.1.2"
+  },
+  "prettier": {
+    "singleQuote": true,
+    "trailingComma": "es5",
+    "semi": false
+  },
+  "eslintConfig": {
+    "extends": "personal",
+    "parserOptions": {
+      "ecmaFeatures": {
+        "experimentalObjectRestSpread": true
+      }
+    }
+  }
+}
