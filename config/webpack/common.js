@@ -63,10 +63,6 @@ export default babelLoaderOptions => ({
         },
         test: /\.(png|jpg|gif|svg)$/,
       },
-      {
-        test: /\.css$/,
-        use: isProd ? getProdCssLoaders() : ['vue-style-loader', 'css-loader'],
-      },
     ],
   },
 })
@@ -75,18 +71,6 @@ export default babelLoaderOptions => ({
 //------------------//
 // Helper Functions //
 //------------------//
-
-function getProdCssLoaders() {
-  return ExtractTextPlugin.extract({
-    fallback: 'vue-style-loader',
-    use: [
-      {
-        loader: 'css-loader',
-        options: { minimize: true },
-      },
-    ],
-  })
-}
 
 function getProdPlugins() {
   return [
