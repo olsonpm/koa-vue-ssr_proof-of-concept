@@ -24,6 +24,7 @@ const isProd = process.env.NODE_ENV === 'production',
 //------//
 
 export default babelLoaderOptions => ({
+  mode: 'development',
   devtool: isProd
     ? '#cheap-module-source-map'
     : '#cheap-module-inline-source-map',

@@ -1,7 +1,7 @@
 export default {
   presets: [
     [
-      'env',
+      '@babel/env',
       {
         modules: false,
         targets: {

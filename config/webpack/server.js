@@ -16,6 +16,7 @@ const babelConfig = require('../babel/server')
 //------//
 
 module.exports = {
+  mode: 'development',
   entry: path.join(__dirname, '../../server.js'),
   target: 'node',
   devtool: '#cheap-module-inline-source-map',

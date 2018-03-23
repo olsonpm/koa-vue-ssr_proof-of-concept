@@ -37,14 +37,6 @@ export default webpackMerge(commonConfig, {
       ),
       'process.env.VUE_ENV': '"client"',
     }),
-    new webpack.optimize.CommonsChunkPlugin({
-      name: 'vendor',
-      minChunks: ({ context, request }) =>
-        /node_modules/.test(context) && !/\.css$/.test(request),
-    }),
-    new webpack.optimize.CommonsChunkPlugin({
-      name: 'manifest',
-    }),
     new VueSSRClientPlugin(),
   ],
 })
