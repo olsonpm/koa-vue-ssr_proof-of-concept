@@ -1,10 +1,10 @@
 <template>
-	<h2>About</h2>
+	<h2>Page Not Found :(</h2>
 </template>
 
 <script>
 export default {
-  name: 'about',
-  path: '/about',
+  name: 'not-found',
+  path: '*',
 }
 </script>

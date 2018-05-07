@@ -5,7 +5,6 @@
 import 'source-map-support/register'
 
 import chalk from 'chalk'
-import createVueRouter from './create/router'
 import Koa from 'koa'
 import KoaRouter from 'koa-router'
 import path from 'path'
@@ -62,30 +61,24 @@ initDevServer({
 //------------------//
 
 function createKoaRouter(getRenderer) {
-  const koaRouter = new KoaRouter(),
-    vueRouter = createVueRouter()
+  const koaRouter = new KoaRouter()
 
   koaRouter.get('*', ctx => {
     const { renderToString } = getRenderer(),
-      { url } = ctx
+      vueContext = { url: ctx.url }
 
-    if (matches404(vueRouter, url)) ctx.status = 404
-
-    return renderToString({ url }).then(html => {
-      ctx.body = html
-    })
+    return renderToString(vueContext)
+      .then(html => {
+        const statusCode = vueContext.statusCode || 200
+        // eslint-disable-next-line no-console
+        console.log('statusCode from server: ' + statusCode)
+        ctx.status = statusCode
+        ctx.body = html
+      })
+      .catch(logError)
   })
 
   return koaRouter
-}
-
-function matches404(vueRouter, url) {
-  const matchedRouteRecords = vueRouter.match(url).matched
-
-  return (
-    matchedRouteRecords.length === 1 &&
-    matchedRouteRecords[0].name === 'notFound'
-  )
 }
 
 function logUnhandledRejections() {

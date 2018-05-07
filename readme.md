@@ -44,10 +44,15 @@ node ./server.bundle.js
 # should notify you the web server is listening on port 8085 when done
 ```
 
-Now in a browser visit `http://localhost:8085` and you should be taken to the
-(very ugly) home view which was rendered on the server.  Click on the `About`
-link and you should be taken to `/about` which was rendered on the client.  
-Finally in the url visit `http://localhost:8085/nothing-here` and you will be
-taken to a custom 404 view.  What's special about this is the server actually
-responds with a 404 error code (vue doesn't come with this functionality out of
-the box unfortunately).
+- In a browser visit `http://localhost:8085` and you should be taken to the
+(very ugly) home view which was rendered on the server.
+
+- Click on the `About` link and you should be taken to `/about` which was
+rendered on the client.
+
+- If you click 'Cause 404' the client will render 'Page Not Found'.  If you
+refresh the page now, it will render the same view and the server will have
+sent a 404 http status code.
+
+- Now click on 'Cause error' and the client will render an error page.  Refresh
+the page and the server will respond with a 500 status code.

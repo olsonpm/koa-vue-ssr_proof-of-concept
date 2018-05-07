@@ -33,14 +33,6 @@ module.exports = {
   module: {
     rules: [
       {
-        //
-        // we need a VueRouter instance in order to detect 404 but we don't need
-        //   all the component baggage with that particular instance.
-        //
-        loader: 'null-loader',
-        test: /\.vue$/,
-      },
-      {
         exclude: /node_modules/,
         loader: 'babel-loader',
         options: babelConfig,

@@ -29,7 +29,7 @@ const ssrConfig = Object.assign({}, commonConfig, {
   // __dirname is the project root instead of the directory containing this file
   //
   devtool: 'source-map',
-  entry: path.join(__dirname, 'entry/server.js'),
+  entry: path.join(__dirname, 'entry/ssr.js'),
   target: 'node',
   externals: webpackNodeExternals({
     whitelist: /\.css$/,

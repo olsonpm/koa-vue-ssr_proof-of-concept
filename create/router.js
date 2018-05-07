@@ -2,66 +2,35 @@
 // Imports //
 //---------//
 
-import _ from 'lodash'
 import Vue from 'vue'
 import VueRouter from 'vue-router'
 
 import about from '../component/about.vue'
+import causeError from '../component/cause-error.vue'
 import home from '../component/home.vue'
-import notFound from '../component/not-found.vue'
-
-//
-//------//
-// Init //
-//------//
-
-const nameToComponent = getNameToComponent(),
-  nameToPath = getNameToPath()
+import notFound from './not-found.vue'
 
 //
 //------//
 // Main //
 //------//
 
-const routes = createRoutes()
-
 Vue.use(VueRouter)
 
-export default () =>
+const routes = [about, causeError, home, notFound].map(component => ({
+  component,
+  path: component.path,
+}))
+
+const createRouter = () =>
   new VueRouter({
     mode: 'history',
     routes,
   })
 
 //
-//------------------//
-// Helper Functions //
-//------------------//
+//---------//
+// Exports //
+//---------//
 
-function getNameToComponent() {
-  return {
-    about,
-    index: home,
-    notFound,
-  }
-}
-
-function createRoutes() {
-  return ['about', 'index', 'notFound'].map(name => {
-    const component = nameToComponent[name],
-      path = getPathFromName(name)
-
-    return { component, name, path }
-  })
-}
-
-function getPathFromName(name) {
-  return '/' + _.get(nameToPath, name, _.kebabCase(name))
-}
-
-function getNameToPath() {
-  return {
-    index: '',
-    notFound: '*',
-  }
-}
+export default createRouter

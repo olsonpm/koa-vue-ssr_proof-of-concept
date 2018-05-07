@@ -5,5 +5,6 @@
 <script>
 export default {
   name: 'home',
+  path: '/',
 }
 </script>
