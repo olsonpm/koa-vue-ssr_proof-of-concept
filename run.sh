@@ -3,7 +3,7 @@
 command="${1}"
 
 if [ "${command}" = "dev" ]; then
-  npx webpack --config config/webpack/server.js --watch
+  node ./node_modules/.bin/webpack --config config/webpack/server.js --watch
 else
   echo "command not found: ${command}"
 fi
