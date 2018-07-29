@@ -30,12 +30,7 @@ export default babelLoaderOptions => ({
     : '#cheap-module-inline-source-map',
   output: {
     filename: '[name].chunkhash.js',
-    //
-    // HACK workaround due to https://github.com/webpack/webpack/issues/4303
-    // __dirname is the project root instead of the directory containing
-    //   this file
-    //
-    path: path.join(__dirname, 'dist/vue'),
+    path: path.resolve(__dirname, '../../dist/vue'),
     publicPath: '/dist/vue',
   },
   performance: {

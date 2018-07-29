@@ -23,7 +23,7 @@ import { logError } from './utils'
 const highlight = chalk.green,
   serverPort = 8085,
   webpackHotClientPort = 8086,
-  templatePath = path.join(__dirname, 'index.template.html'),
+  templatePath = path.resolve(__dirname, 'index.template.html'),
   webpackConfigs = {
     client: _client,
     ssr: _ssr,

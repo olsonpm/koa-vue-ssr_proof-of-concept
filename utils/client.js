@@ -2,20 +2,8 @@
 // Main //
 //------//
 
-//
-// just a positive form of 'non-empty'
-//
-const isLaden = something => {
-  return (
-    something &&
-    (something.length ||
-      something.size ||
-      (typeof something === 'number' && something > 0) ||
-      (typeof something === 'object' && Object.keys(something).length))
-  )
-}
-
 const logError = err => {
+  // eslint-disable-next-line no-console
   console.error(err)
 }
 
@@ -24,4 +12,4 @@ const logError = err => {
 // Exports //
 //---------//
 
-export { isLaden, logError }
+export { logError }

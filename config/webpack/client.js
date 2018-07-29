@@ -24,11 +24,7 @@ const commonConfig = getCommonConfig(babelConfig)
 //------//
 
 const clientConfig = Object.assign({}, commonConfig, {
-  //
-  // HACK workaround due to https://github.com/webpack/webpack/issues/4303
-  // __dirname is the project root instead of the directory containing this file
-  //
-  entry: [path.join(__dirname, 'entry/client.js')],
+  entry: [path.resolve(__dirname, '../../entry/client.js')],
 })
 
 clientConfig.plugins.push(

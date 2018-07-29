@@ -17,14 +17,14 @@ const babelConfig = require('../babel/server')
 
 module.exports = {
   mode: 'development',
-  entry: path.join(__dirname, '../../server.js'),
+  entry: path.resolve(__dirname, '../../server.js'),
   target: 'node',
   devtool: '#cheap-module-inline-source-map',
-  node: { __dirname: false },
+  node: { __dirname: true },
   output: {
     libraryTarget: 'commonjs2',
     filename: 'server.bundle.js',
-    path: path.join(__dirname, '../..'),
+    path: path.resolve(__dirname, '../..'),
   },
   externals: webpackNodeExternals({
     whitelist: /\.css$/,
